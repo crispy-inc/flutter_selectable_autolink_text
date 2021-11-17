@@ -114,6 +114,7 @@ class SelectableAutoLinkText extends StatefulWidget {
     this.text, {
     Key? key,
     String? linkRegExpPattern,
+    bool? linkRegExpCaseSensitive,
     this.onTransformDisplayLink,
     this.onTap,
     this.onLongPress,
@@ -143,8 +144,10 @@ class SelectableAutoLinkText extends StatefulWidget {
     this.textWidthBasis,
     this.onSelectionChanged,
     this.onDebugMatch,
-  })  : linkRegExp =
-            RegExp(linkRegExpPattern ?? AutoLinkUtils.defaultLinkRegExpPattern),
+  })  : linkRegExp = RegExp(
+          linkRegExpPattern ?? AutoLinkUtils.defaultLinkRegExpPattern,
+          caseSensitive: linkRegExpCaseSensitive ?? false,
+        ),
         super(key: key);
 
   @override
