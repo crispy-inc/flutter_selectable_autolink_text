@@ -146,7 +146,7 @@ class SelectableAutoLinkText extends StatefulWidget {
     this.onDebugMatch,
   })  : linkRegExp = RegExp(
           linkRegExpPattern ?? AutoLinkUtils.defaultLinkRegExpPattern,
-          caseSensitive: linkRegExpCaseSensitive ?? false,
+          caseSensitive: linkRegExpCaseSensitive ?? true,
         ),
         super(key: key);
 
